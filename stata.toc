@@ -1,0 +1,3 @@
+v 1.0.0
+d sendemail
+p sendemail        Send email using Stata
