@@ -1,30 +1,7 @@
 {smcl}
 {* *! version 1.0}{...}
-{hline}
-help for {bf:biascheck} {right:Generate enumerator bias reports}
-{hline}
-
 {title:Title}
-
-{p 4 4 2}
-{bf:biascheck} - Generate enumerator bias reports for categorical variables, particularly Likert-scale questions
-
-{title:Syntax}
-
-{p 4 4 2}
-{cmd:biascheck} {it:varname} {cmd:,} {cmdab:enum:(varname)} [{it:options}]
-
-{synoptset 20 tabbed}{...}
-{synopthdr}
-{synoptline}
-{syntab:Required}
-{synopt:{cmdab:enum:(varname)}}Enumerator identifier variable (e.g., interviewer ID){p_end}
-
-{syntab:Options}
-{synopt:{cmdab:format:(%fmt)}}Display format for proportions (default %4.2f){p_end}
-{synoptline}
-{p2colreset}{...}
-
+Send Email using Stata
 {title:Description}
 
 {p 4 4 2}
