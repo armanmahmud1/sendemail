@@ -7,7 +7,8 @@ Send Email using Stata
 {p 4 4 2}
 {cmd:sendemail} is a cumulative packages for send email using Stata. it opens a dialog box for write the essentials things to send an email. this module is created using multiple packages named "pr0078" and "tknz". As this module use power shell to send email, it maybe not work in some computer if power shell is not here.
 
-{title: Example}
+{title:Example}
+
 db sendemail
 
 
