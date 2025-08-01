@@ -1,0 +1,54 @@
+*! version 1.0.0, Arman Mahmud 07july2025 
+
+VERSION 17.0
+
+POSITION . . 450 220
+
+DIALOG main, label("Enter all of the section") tabtitle("Main")
+BEGIN
+	TEXT  tx_gen   10  10   .    ., label("Enter Your Email:")
+	EDIT  ed_gen   10 +20 250   ., error("Email must be filled in") default("@arced.foundation")
+
+	TEXT  tx_gen2  10 +30  .    ., label("Enter Your Generated App Password:")
+	EDIT  ed_gen2  10 +20 250   ., error("Password must be filled in") nomemory password
+
+	TEXT  tx_gen3  10 +20 .     ., label("Enter Receiver Email")	
+	EDIT  ed_gen3  10 +20 250   ., error("Email must be filled in") 
+
+	TEXT  tx_gen4  10 +20 .     ., label("Email  Body")	
+	EDIT  ed_gen4  10 +20 250   ., error("Email body be filled in") 
+
+	TEXT  tx_gen5  10 +20 .     ., label("Email  Subject")	
+	EDIT  ed_gen5  10 +20 250   ., error("Email subject be filled in") 
+	
+END
+
+OK     ok1,   label("OK")
+CANCEL can1,  label("Cancel")
+SUBMIT sub1, label("Submit")
+RESET  res1
+
+
+PROGRAM command
+BEGIN
+	put "email_send, sender("
+	require main.ed_gen
+	put `"""' main.ed_gen `"""'
+	put ") " 
+	put "password("
+	require main.ed_gen2
+	put `"""' main.ed_gen2 `"""'
+	put ") "
+	put "receiver("
+	require main.ed_gen3
+	put `"""' main.ed_gen3 `"""'
+	put ") "
+	put "body("
+	require main.ed_gen4
+	put `"""' main.ed_gen4 `"""'
+	put ") "
+	put "sub("
+	require main.ed_gen5
+	put `"""' main.ed_gen5 `"""'
+	put ") "
+END
