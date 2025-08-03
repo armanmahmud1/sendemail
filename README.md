@@ -8,6 +8,11 @@ net install sendemail, from("https://raw.githubusercontent.com/armanmahmud1/send
 db sendemail <br>
 help sendemail
 
+## Instructions 
+### Enable 2FA and Generate App Password
+	Visit https://myaccount.google.com/security to enable 2-Step Verification. 
+	Then go to https://myaccount.google.com/apppasswords, generate an app password for "Mail",
+	and copy it. 
 ## Author
 Arman Mahmud, <br>
 Email: armanmahmud.du18@gmail.com, <br>
