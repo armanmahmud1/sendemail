@@ -9,7 +9,7 @@ db sendemail <br>
 help sendemail
 
 ## Instructions 
-** Enable 2FA and Generate App Password **
+<b> Enable 2FA and Generate App Password </b> <br>
 Visit https://myaccount.google.com/security to enable 2-Step Verification. 
 Then go to https://myaccount.google.com/apppasswords, generate an app password for "Mail",
 and copy it. 
