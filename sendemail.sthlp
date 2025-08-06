@@ -1,6 +1,6 @@
 
 {smcl}
-{**!version 1.0.0 Arman Mahmud, 2 Aug 2025}  
+{* *!version 1.0.0 Arman Mahmud, 2 Aug 2025}{...}  
 {title:sendemail — Send email using Stata}
 
 {phang}
@@ -32,3 +32,4 @@ Arman Mahmud
 
 {phang}
 Email: {browse "mailto:armanmahmud.du18@gmail.com":armanmahmud.du18@gmail.com}
+
