@@ -1,30 +1,3 @@
-{smcl}
-{* *! version 1.0}{...}
-{hline}
-help for {bf:biascheck} {right:Generate enumerator bias reports}
-{hline}
-
-{title:Title}
-
-{p 4 4 2}
-{bf:biascheck} - Generate enumerator bias reports for categorical variables, particularly Likert-scale questions
-
-{title:Syntax}
-
-{p 4 4 2}
-{cmd:biascheck} {it:varname} {cmd:,} {cmdab:enum:(varname)} [{it:options}]
-
-{synoptset 20 tabbed}{...}
-{synopthdr}
-{synoptline}
-{syntab:Required}
-{synopt:{cmdab:enum:(varname)}}Enumerator identifier variable (e.g., interviewer ID){p_end}
-
-{syntab:Options}
-{synopt:{cmdab:format:(%fmt)}}Display format for proportions (default %4.2f){p_end}
-{synoptline}
-{p2colreset}{...}
-
 {title:Description}
 
 {p 4 4 2}
@@ -43,4 +16,5 @@ Visit https://myaccount.google.com/security to enable 2-Step Verification. Then 
 Arman Mahmud{p_end}
 {p 4 4 2}
 Email: {browse "mailto:armanmahmud.du18@gmail.com":armanmahmud.du18@gmail.com}{p_end}
+
 
