@@ -13,6 +13,7 @@ Note: This module uses PowerShell to send emails. It may not work on systems whe
 
 {phang}
 {cmd:db sendemail}
+{cmd:help sendemail}
 
 {title:Setup Instructions for Gmail}
 
@@ -23,7 +24,7 @@ To use Gmail with this module, follow these steps:
 1. Enable 2-Step Verification: Visit {browse "https://myaccount.google.com/security"}.
 
 {phang2}
-2. Generate an App Password: Go to {browse "https://myaccount.google.com/apppasswords"}, select "Mail", and copy the generated password.
+2. Generate an App Password: Go to {browse "https://myaccount.google.com/apppasswords"}, create, and copy the generated password.
 
 {title:Author}
 
@@ -32,4 +33,6 @@ Arman Mahmud
 
 {phang}
 Email: {browse "mailto:armanmahmud.du18@gmail.com":armanmahmud.du18@gmail.com}
+Web: {browse "https://sites.google.com/view/armanmahmud1":armanmahmud1}
+
 
