@@ -12,7 +12,8 @@ Note: This module uses PowerShell to send emails. It may not work on systems whe
 {title:Syntax}
 
 {phang}
-{cmd:db sendemail} </br>
+{cmd:db sendemail} 
+{phang}
 {cmd:help sendemail}
 
 {title:Setup Instructions for Gmail}
@@ -32,8 +33,10 @@ To use Gmail with this module, follow these steps:
 Arman Mahmud
 
 {phang}
-Email: {browse "mailto:armanmahmud.du18@gmail.com":armanmahmud.du18@gmail.com} </br>
+Email: {browse "mailto:armanmahmud.du18@gmail.com":armanmahmud.du18@gmail.com} 
+{phang}
 Web: {browse "https://sites.google.com/view/armanmahmud1":armanmahmud1}
+
 
 
 
