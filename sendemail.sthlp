@@ -4,7 +4,7 @@
 {title:sendemail — Send email using Stata}
 
 {phang}
-{cmd:sendemail} is a module for sending emails directly from within Stata. It opens a dialog box where you can enter the necessary details to compose and send an email. This module is built using multiple packages, including {cmd:pr0078} and {cmd:tknz}.
+{cmd:sendemail} is a module for sending emails directly from within Stata. It opens a dialog box where you can enter the necessary details to compose and send an email. This module is built including {cmd:pr0078} and {cmd:tknz}.
 
 {phang}
 Note: This module uses PowerShell to send emails. It may not work on systems where PowerShell is unavailable or restricted.
@@ -36,3 +36,4 @@ Email: {browse "mailto:armanmahmud.du18@gmail.com":armanmahmud.du18@gmail.com}
 
 {phang}
 Website: {browse "https://sites.google.com/view/armanmahmud1":armanmahmud1}
+
