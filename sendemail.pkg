@@ -1,6 +1,7 @@
-v 1.0.0, Arman Mahmud 07july2025 
+v 1.0.1, Arman Mahmud 07july2025 
 d sendemail: Send email using Stata
-d distribution-date: 2025-07-07
+d distribution-date: 2025-08-15
 f email_send.ado
 f sendemail.sthlp
+
 f sendemail.dlg
