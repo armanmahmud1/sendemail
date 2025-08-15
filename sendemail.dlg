@@ -1,54 +1,98 @@
-*! version 1.0.0, Arman Mahmud 07july2025 
+	*! version 1.0.1, Arman Mahmud 07july2025 
 
-VERSION 17.0
+	VERSION 17.0
 
-POSITION . . 450 220
+	POSITION . . 430 450
 
-DIALOG main, label("Enter all of the section") tabtitle("Main")
-BEGIN
-	TEXT  tx_gen   10  10   .    ., label("Enter Your Email:")
-	EDIT  ed_gen   10 +20 250   ., error("Email must be filled in") default("@arced.foundation")
-
-	TEXT  tx_gen2  10 +30  .    ., label("Enter Your Generated App Password:")
-	EDIT  ed_gen2  10 +20 250   ., error("Password must be filled in") nomemory password
-
-	TEXT  tx_gen3  10 +20 .     ., label("Enter Receiver Email")	
-	EDIT  ed_gen3  10 +20 250   ., error("Email must be filled in") 
-
-	TEXT  tx_gen4  10 +20 .     ., label("Email  Body")	
-	EDIT  ed_gen4  10 +20 250   ., error("Email body be filled in") 
-
-	TEXT  tx_gen5  10 +20 .     ., label("Email  Subject")	
-	EDIT  ed_gen5  10 +20 250   ., error("Email subject be filled in") 
+	DIALOG info, label("Dialog Box for Send Email ") tabtitle("Info")
+	BEGIN
+		GROUPBOX gb_credentials 10 10 400 150, label("Basic Information")
+		TEXT tx_info1 15 +20 390 390, label("This package builds upon and integrates features from the existing ") center
+		TEXT tx_info2 15 +20 390 390, label(" `pr0078' and `tknz' packages. The package relies on PowerShell to ") center
+		TEXT tx_info3 15 +20 390 390, label("execute the email-sending process, so it may not function correctly ") center 
+		TEXT tx_info4 15 +20 390 390, label("on systems where PowerShell is unavailable or disabled. You can ") center
+		TEXT tx_info5 15 +20 390 390, label("explore the original sendemails package.") center
+		TEXT tx_info6 15 +20 390 390, label("link: https://doi.org/10.1177/1536867X241233672") center
 	
-END
+		GROUPBOX gb_credentials_2 10 +40 400 90, label("Instructions")
+		TEXT tx_ins1 15 +20 390 390, label("Enable 2FA and Generate App Password Visit `https:// myaccount.google." )
+		TEXT tx_ins2 15 +20 390 390, label("com/security' to enable 2-Step Verification. Then go to https://myaccount")
+		TEXT tx_ins3 15 +20 390 390, label(".google.com/apppasswords, generate an app password for Sent E-Mail.")
+	
+		TEXT tx_ins4 10 +50 390 390, label(" ⓘ For more information, please click the Help button located in the bottom-left corner") center
+		TEXT tx_ins5 10 +20 390 390, label(" bottom-left corner ⓘ") center
+	
+	END
+	
 
-OK     ok1,   label("OK")
-CANCEL can1,  label("Cancel")
-SUBMIT sub1, label("Submit")
-RESET  res1
+	DIALOG main, label("Credential") tabtitle("credentials")
+	BEGIN
+		GROUPBOX gb_main_1 10 10 400 180, label("Credentials") 
+		TEXT  tx_gen   25 +20 300  ., label("Enter Your Email:")
+		EDIT  ed_gen   25 +20 300  ., error("Email must be filled in") default("@arced.foundation")
+
+		TEXT  tx_gen2  25 +30 300  ., label("Enter Your Generated App Password:")
+		EDIT  ed_gen2  25 +20 300  ., error("Password must be filled in") nomemory password
+
+		TEXT  tx_gen3  25 +30 300  ., label("Enter Receiver Email:") 	
+		EDIT  ed_gen3  25 +20 300  ., error("Email must be filled in") default("@arced.foundation")
+
+		GROUPBOX gb_main_2	10 200 400 200, label("Email Info")
+		TEXT  tx_gen5  25 +20 300  ., label("Email  Subject:")	
+		EDIT  ed_gen5  25 +20 300  ., error("Email subject be filled in") 
+		
+		TEXT  tx_gen4  25 +30 300  ., label("Email  Body:")	
+		EDIT  ed_gen4  25 +20 300  ., error("Email body be filled in") 
+		
+		CHECKBOX ck_main1 25 +30 . ., label("Has attachment") onclickon(script file_main_1_on) onclickoff(script file_main_1_off)
+		TEXT  tx_gen6  25 +25 300  ., label("Select attachment*")	
+		FILE file_main_1 25 +20 300 ., label(Browse...) 
+		
+		TEXT tx_notes  15 +40 300 ., label("* Note: keep the file size less than 100 KB")
+	END
+
+	SCRIPT file_main_1_on
+	BEGIN
+		main.file_main_1.enable
+	END
+	
+	SCRIPT file_main_1_off
+	BEGIN
+		main.file_main_1.disable
+	END
+	
+	
+	OK     ok1,   label("OK")
+	CANCEL can1,  label("Cancel")
+	RESET  res1
+	HELP hlp1, view("browse https://github.com/armanmahmud1/sendemail")
 
 
-PROGRAM command
-BEGIN
-	put "email_send, sender("
-	require main.ed_gen
-	put `"""' main.ed_gen `"""'
-	put ") " 
-	put "password("
-	require main.ed_gen2
-	put `"""' main.ed_gen2 `"""'
-	put ") "
-	put "receiver("
-	require main.ed_gen3
-	put `"""' main.ed_gen3 `"""'
-	put ") "
-	put "body("
-	require main.ed_gen4
-	put `"""' main.ed_gen4 `"""'
-	put ") "
-	put "sub("
-	require main.ed_gen5
-	put `"""' main.ed_gen5 `"""'
-	put ") "
-END
+	PROGRAM command
+	BEGIN
+		put "email_send, sender("
+		require main.ed_gen
+		put `"""' main.ed_gen `"""'
+		put ") " 
+		put "password("
+		require main.ed_gen2
+		put `"""' main.ed_gen2 `"""'
+		put ") "
+		put "receiver("
+		require main.ed_gen3
+		put `"""' main.ed_gen3 `"""'
+		put ") "
+		put "body("
+		require main.ed_gen4
+		put `"""' main.ed_gen4 `"""'
+		put ") "
+		put "sub("
+		require main.ed_gen5
+		put `"""' main.ed_gen5 `"""'
+		put ") "
+		put "attach("
+		put `"""' main.file_main_1 `"""'
+		put ") "
+	END
+
+	
