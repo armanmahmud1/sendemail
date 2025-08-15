@@ -1,14 +1,15 @@
-*! version 1.0.0, Arman Mahmud 07july2025 
+*! version 1.0.1, Arman Mahmud 07july2025 
 	
 	program define email_send
-		syntax, sender(string) password(string) receiver(string) body(string) sub(string)
+		syntax, sender(string) password(string) receiver(string) body(string) sub(string) [attach(string)]
 		loc email `sender'
 		loc password `password'
 		loc body `body'
 		loc receiver `receiver'
 		loc sub `sub'
+		loc attach `attach'
 
-qui{
+
 		*Installing packages..."
 	
 		cap which pr0078
@@ -51,25 +52,24 @@ qui{
 		
 	** Mail sending using powershell
 
-		n di as input _n "Sending email initiating..."
 		
 		!powershell -command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser"
 		
-		sendemails `receiver', body(`body') subject(`sub') ///
-		ufile(`user_file') pfile(`pass_file') smtpport(587) smtpserver(smtp.gmail.com) 	 ///
-		psloc(.\) sleep(3000)
+		sendemails `receiver', body(`body') subject(`sub') 				///
+		ufile(`user_file') pfile(`pass_file')  attachment(`attach') 	///
+		smtpport(587) smtpserver(smtp.gmail.com) 	 					///
+		psloc(.\) sleep(3000) 
 
 		!powershell -command "Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser -Force"
 		
-		n di as result "Email sent completed"	
 			
 	** Remove email, password and others additional file 	
 	
-		sleep 5000
+		sleep 7000
 		rm mailps.ps1
 		rm errormessage.txt	 
 	
-	}																								
+																									
 	end
 	
-	** END OF DO FILE **	
+		
