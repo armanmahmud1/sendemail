@@ -21,6 +21,9 @@ and copy it.
 ## Known Limitations
 This dialog box is currently under development and does not yet offer all the features available in the original sendemails package. We are actively working to enhance its functionality. For more information, please click the Help button located in the bottom-left corner of the dialog box, and feel free to share your feedback. Thank you for your support!
 
+## Issues
+For any issues, report: https://github.com/armanmahmud1/sendemail/issues
+
 ## Author
 Arman Mahmud, <br>
 Email: armanmahmud.du18@gmail.com, <br>
